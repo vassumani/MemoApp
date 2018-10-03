@@ -21,15 +21,19 @@ namespace memo.Data.Migrations
 
             modelBuilder.Entity("memo.Models.Memo", b =>
                 {
-                    b.Property<int>("MemoId")
+                    b.Property<int>("memoId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Message");
+                    b.Property<DateTime>("Date");
+
+                    b.Property<string>("Details");
 
                     b.Property<string>("OwnerId");
 
-                    b.HasKey("MemoId");
+                    b.Property<string>("Title");
+
+                    b.HasKey("memoId");
 
                     b.ToTable("Memo");
                 });
